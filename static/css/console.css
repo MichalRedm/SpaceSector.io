@@ -1,7 +1,7 @@
 #console {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 8px;
+    right: 8px;
     width: 320px;
     height: 226px;
     z-index: 1;
