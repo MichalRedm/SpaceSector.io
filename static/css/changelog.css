@@ -1,7 +1,7 @@
 #changelog {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 8px;
+    left: 8px;
     width: 256px;
     z-index: 1;
     padding: 0;
@@ -26,6 +26,7 @@
 #changelogContent {
     padding: 8px;
     height: calc(100% - 64px);
+    font-size: 12px;
 }
 
 .changelogUpdate:not(:first-child) {

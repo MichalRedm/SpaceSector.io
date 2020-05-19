@@ -13,12 +13,8 @@
     text-align: center;
 }
 
-#nameInput {
-    /*padding: 10px;*/
-}
-
 #header {
-    font-size: 96px;
+    font-size: 6em;
     color: var(--main-color);
     text-shadow: var(--main-color) 0 0 6px;
     user-select: none;
@@ -62,10 +58,27 @@
 }
 
 #social > a {
+    position: relative;
     color: inherit;
     text-decoration: none;
     text-align: center;
     transition: color 0.3s;
+}
+
+#social  > a > .socialHoverBg {
+    z-index: -1;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.4em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2em;
+    height: 1.5em;
+    transition: background-color 0.3s;
+}
+
+#social  > a:hover > .socialHoverBg {
+    background-color: #fff;
 }
 
 #social > a:not(:last-child) {
@@ -73,12 +86,12 @@
 }
 
 #social i {
-    font-size: 2.5em;
+    font-size: 40px;
     display: block;
 }
 
 #social span {
-    font-size: 0.5em;
+    font-size: 8px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }

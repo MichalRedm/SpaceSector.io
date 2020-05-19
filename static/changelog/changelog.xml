@@ -3,6 +3,7 @@
     <update date="2020-05-19">
         <change>Main client-side JavaScript rebuilt</change>
         <change>Added animated mothership logo</change>
+        <change>Added social buttons</change>
     </update>
     <update date="2020-05-18">
         <change>Added changelog</change>
