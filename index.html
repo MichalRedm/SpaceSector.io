@@ -9,6 +9,7 @@
         <link rel="icon" href="/static/img/png/logo.png" />
         <link rel="stylesheet" href="/static/css/main.css" />
         <script>var isAdBlockActive = true;</script>
+        <script src="https://kit.fontawesome.com/ed6c3f397f.js" crossorigin="anonymous"></script>
         <script src="/static/js/ads.js"></script>
         <script src="/static/js/simplebar.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
@@ -40,20 +41,38 @@
                 <header id="header">
                     SpaceSector.io
                 </header>
-                <input type="text" id="nameInput" class="box" placeholder="Name" spellcheck="false" />
+                <input type="text" id="nameInput" class="box" placeholder="Name" spellcheck="false" maxlength="15" />
                 <button id="spawn" class="boxFill">Play</button>
             </div>
-            <div id="chat">
-                <header id="chatHeader">
-                    <div id="chatClose"></div>
-                </header>
-                <div id="chatSimplebarContainer" data-simplebar>
-                    <div id="chatMessages">
-                        Loading chat...
-                    </div>
-                </div>
-                <textarea id="chatInput" maxlength="200"></textarea>
+            <div id="changelog" class="box">
+                <header id="changelogHeader"></header>
+                <div id="changelogContent"></div>
             </div>
+            <div id="social" class="box">
+                <a id="discordButton" href="#">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
+                <a id="redditButton" href="#">
+                    <i class="fab fa-reddit"></i>
+                    <span>Reddit</span>
+                </a>
+                <a id="youtubeButton" href="#">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
+        <div id="chat">
+            <header id="chatHeader">
+                <div id="chatClose"></div>
+            </header>
+            <div id="chatSimplebarContainer" data-simplebar>
+                <div id="chatMessages">
+                    <p>Loading chat...</p>
+                </div>
+            </div>
+            <textarea id="chatInput" maxlength="200"></textarea>
         </div>
         <div id="modalContainer">
             <div id="modalOverlay"></div>
@@ -72,10 +91,6 @@
             <div id="consoleContent" data-simplebar>
                 <textarea id="consoleInput" spellcheck="false"></textarea>
             </div>
-        </div>
-        <div id="changelog" class="box">
-            <header id="changelogHeader"></header>
-            <div id="changelogContent"></div>
         </div>
         <noscript>
             <div id="noscript">

@@ -18,11 +18,12 @@ class Game {
         this.console = new GameConsole(this.socket);
         this.changelog = new Changelog();
 
-        this.reloadListener();
+        this.reloading = false;
+
         this.disconnectListener();
         this.streamListener();
         this.colorize();
-        this.fadeIn();       
+        this.fadeIn();    
     }
     connect() {
         this.socket = io();
@@ -34,10 +35,9 @@ class Game {
         }.bind(this));
     }
     reloadListener() {
-        this.reloading = false;
         window.onbeforeunload = function() {
             this.reloading = true;
-        }
+        }.bind(this);
     }
     disconnectListener() {
         var disconnected = false;
