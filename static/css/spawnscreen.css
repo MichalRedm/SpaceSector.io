@@ -39,7 +39,7 @@
 
 #logoCenter {
     transform-origin: 50% 50%;
-    animation: logoCenterPulse 4s ease-in-out 0s infinite;
+    animation: logoCenterPulse 4s ease-in-out 1s infinite;
 }
 
 @keyframes logoRotate {
