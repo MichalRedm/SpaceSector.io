@@ -1,0 +1,19 @@
+<svg version="1.1" baseProfile="full" width="256" height="256" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter id="f2" x="0" y="0" width="200%" height="200%">
+        <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
+        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
+        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+    </defs>
+    <g filter="url(#f2)">
+        <polygon points="146,96 109.5,96 93,67 163,67" fill="#00faff" />
+        <polygon points="146,96 109.5,96 93,67 163,67" fill="#00faff" transform="rotate(120, 128, 128)"/>
+        <polygon points="146,96 109.5,96 93,67 163,67" fill="#00faff" transform="rotate(240, 128, 128)" />
+        <polygon points="128,0 93,61 163,61" fill="#00faff" />
+        <polygon points="128,0 93,61 163,61" fill="#00faff" transform="rotate(120, 128, 128)"/>
+        <polygon points="128,0 93,61 163,61" fill="#00faff" transform="rotate(240, 128, 128)" />
+        <circle cx="128" cy="128" r="32" stroke-width="12" stroke="#00faff" fill="none" />
+        <circle cx="128" cy="128" r="16" fill="#00faff"  />
+    </g>
+</svg>

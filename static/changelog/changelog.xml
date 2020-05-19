@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<changelog>
+    <update date="2020-05-18">
+        <change>Added changelog</change>
+    </update>
+    <update date="2020-05-16">
+        <change>Added ingame chat</change>
+    </update>
+    <update date="2020-05-13">
+        <change>Initial spawnscreen CSS development</change>
+    </update>
+    <update date="2020-05-12">
+        <change>Game project has started</change>
+        <change>GitHub repository created</change>
+        <change>Initial client and server side work</change>
+    </update>
+</changelog>

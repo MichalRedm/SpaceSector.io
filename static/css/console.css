@@ -1,0 +1,50 @@
+#console {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 226px;
+    z-index: 1;
+    display: none;
+    padding: 0;
+}
+
+#consoleHeader {
+    background-color: var(--main-color);
+    height: 32px;
+    line-height: 32px;
+    color: #000;
+    padding: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+
+#consoleHeader:before {
+    content: "GAME CONSOLE";
+}
+
+#consoleContent {
+    padding: 8px;
+    height: calc(100% - 64px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    cursor: text;
+}
+
+#consoleInput {
+    width: 100%;
+    border: none;
+    background: none;
+    resize: none;
+    padding: none;
+    margin: none;
+    outline: none;
+    display: block;
+    color: inherit;
+    font-size: inherit;
+}
+
+.consoleServerRes {
+    color: #bbb;
+}

@@ -2,17 +2,88 @@
 <html lang="en">
     <head>
         <title>SPACESECTOR.io</title>
-        <style>
-            canvas {
-                width: 800px;
-                height: 600px;
-                border: 5px solid black;
-            }
-        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="Michał Redmer <michal.redm@gmail.com>" />
+        <link rel="icon" href="/static/img/png/logo.png" />
+        <link rel="stylesheet" href="/static/css/main.css" />
+        <script>var isAdBlockActive = true;</script>
+        <script src="/static/js/ads.js"></script>
+        <script src="/static/js/simplebar.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
-        <script src="/static/game.js" async></script>
+        <script src="/static/js/pixi.min.js"></script>
+        <script src="/static/js/main.js" type="module" async></script>
     </head>
     <body>
-        <canvas id="canvas"></canvas>
+        <div id="spawnscreen">
+            <div id="spawnscreenCenter">
+                <svg id="gameLogo" width="256" height="256">
+                    <defs>
+                        <filter id="f2" x="0" y="0" width="200%" height="200%">
+                            <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
+                            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
+                            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                        </filter>
+                    </defs>
+                    <g filter="url(#f2)">
+                        <polygon points="146,96 109.5,96 93,67 163,67" />
+                        <polygon points="146,96 109.5,96 93,67 163,67" transform="rotate(120, 128, 128)"/>
+                        <polygon points="146,96 109.5,96 93,67 163,67" transform="rotate(240, 128, 128)" />
+                        <polygon points="128,0 93,61 163,61" />
+                        <polygon points="128,0 93,61 163,61" transform="rotate(120, 128, 128)"/>
+                        <polygon points="128,0 93,61 163,61" transform="rotate(240, 128, 128)" />
+                        <circle id="logoRing" cx="128" cy="128" r="32" stroke-width="12" />
+                        <circle id="logoCenter" cx="128" cy="128" r="16" />
+                    </g>
+                </svg> 
+                <header id="header">
+                    SpaceSector.io
+                </header>
+                <input type="text" id="nameInput" class="box" placeholder="Name" spellcheck="false" />
+                <button id="spawn" class="boxFill">Play</button>
+            </div>
+            <div id="chat">
+                <header id="chatHeader">
+                    <div id="chatClose"></div>
+                </header>
+                <div id="chatSimplebarContainer" data-simplebar>
+                    <div id="chatMessages">
+                        Loading chat...
+                    </div>
+                </div>
+                <textarea id="chatInput" maxlength="200"></textarea>
+            </div>
+        </div>
+        <div id="modalContainer">
+            <div id="modalOverlay"></div>
+            <div id="modal" class="box">
+                <div id="modalRelative">
+                    <div id="modalClose">&times;</div>
+                    <header id="modalHeader"></header>
+                    <div id="modalSimplebarContainer" data-simplebar>
+                        <div id="modalContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="console" class="box">
+            <header id="consoleHeader"></header>
+            <div id="consoleContent" data-simplebar>
+                <textarea id="consoleInput" spellcheck="false"></textarea>
+            </div>
+        </div>
+        <div id="changelog" class="box">
+            <header id="changelogHeader"></header>
+            <div id="changelogContent"></div>
+        </div>
+        <noscript>
+            <div id="noscript">
+                <div>
+                    <h1>JavaScript disabled</h1>
+                    <p>This game cannot function properly without JavaScript support in your browser. Please enable it to play this game. <a href="https://www.enablejavascript.io" target="_blank" style="color: black">Learn how</a></p>
+                </div>
+            </div>
+        </noscript>
     </body>
 </html>

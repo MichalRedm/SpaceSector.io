@@ -1,0 +1,25 @@
+input {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+.box, .boxFill {
+    border: 2px solid var(--main-color);
+    box-shadow: var(--main-color) 0 0 6px;
+    padding: 16px;
+    margin: 4px;
+}
+
+.box {
+    color: #fff;
+    background-color: #000;
+}
+
+.boxFill {
+    color: #000;
+    background-color: var(--main-color);
+}

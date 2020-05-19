@@ -1,0 +1,54 @@
+#spawnscreen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+#spawnscreenCenter {
+    position: absolute;
+    top: 20vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#nameInput {
+    /*padding: 10px;*/
+}
+
+#header {
+    font-size: 96px;
+    color: var(--main-color);
+    text-shadow: var(--main-color) 0 0 6px;
+    user-select: none;
+}
+
+#gameLogo {
+    animation: logoRotate 8s linear 0s infinite;
+}
+
+#gameLogo * {
+    fill: var(--main-color);
+}
+
+#logoRing {
+    fill: none;
+    stroke: var(--main-color);
+}
+
+#logoCenter {
+    transform-origin: 50% 50%;
+    animation: logoCenterPulse 4s ease-in-out 0s infinite;
+}
+
+@keyframes logoRotate {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@keyframes logoCenterPulse {
+    0%   { transform: scale(1, 1); }
+    50%  { transform: scale(0.62, 0.62); }
+    100%  { transform: scale(1, 1); }
+}

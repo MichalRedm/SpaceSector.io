@@ -25,7 +25,10 @@
   },
   "homepage": "https://github.com/MichalRedm/SpaceSector.io#readme",
   "dependencies": {
+    "bad-words": "^3.0.3",
+    "colors": "^1.4.0",
     "express": "^4.17.1",
+    "pixi.js": "^5.2.4",
     "socket.io": "^2.3.0"
   }
 }
