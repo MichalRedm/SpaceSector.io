@@ -6,6 +6,7 @@ import { Modal } from "./modal.js";
 import { GameConsole } from "./console.js";
 import { Changelog } from "./changelog.js";
 import { Controls } from "./controls.js";
+import { Sound } from "./sound.js";
 
 class Game {
     constructor() {
@@ -23,7 +24,12 @@ class Game {
         this.disconnectListener();
         this.streamListener();
         this.colorize();
-        this.fadeIn();    
+        this.fadeIn();
+
+        this.bgSound = new Sound("/static/audio/music/giorno.mp3");
+        document.getElementById("spawn").addEventListener("click", function(){
+            this.bgSound.play();
+        }.bind(this));
     }
     connect() {
         this.socket = io();
