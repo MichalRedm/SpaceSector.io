@@ -72,8 +72,8 @@
     top: 0.4em;
     left: 50%;
     transform: translateX(-50%);
-    width: 2em;
-    height: 1.5em;
+    width: 32px;
+    height: 26px;
     transition: background-color 0.3s;
 }
 
