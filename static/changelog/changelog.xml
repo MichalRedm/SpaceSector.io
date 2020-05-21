@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
+    <update date="2020-05-21">
+        <change>Planet creation algorithm</change>
+    </update>
     <update date="2020-05-19">
         <change>Main client-side JavaScript rebuilt</change>
         <change>Added animated mothership logo</change>

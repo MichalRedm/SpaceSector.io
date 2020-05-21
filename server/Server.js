@@ -1,5 +1,5 @@
 const Body = require("./body");
-const Settings = require("./settings");
+const SettingsServer = require("./settingsServer");
 const World = require("./world");
 const Player = require("./player");
 const Strings = require("./strings");
@@ -9,7 +9,7 @@ const colors = require('colors');
 
 class Server {
     constructor() {
-        this.settings = new Settings();
+        this.settings = new SettingsServer();
 
         this.express = require("express");
         this.http = require("http");

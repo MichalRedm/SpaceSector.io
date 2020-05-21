@@ -1,7 +1,8 @@
 class Settings {
     constructor() {
+        // server settings
+        
         this.stepTime = 8;
-        this.worldSize = 1000;
 
         this.chatStepTime = 1500;
 
@@ -9,6 +10,13 @@ class Settings {
 
         this.worldIdLength = 10;
         this.adminKeyLength = 16;
+
+        // world settings
+
+        this.worldSize = 100;
+        this.planetsCount = 87;
+        this.planetsMinDistance = 8;
+
     }
 }
 

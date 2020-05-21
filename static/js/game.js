@@ -26,7 +26,7 @@ class Game {
         this.colorize();
         this.fadeIn();
 
-        this.bgSound = new Sound("/static/audio/music/giorno.mp3");
+        this.bgSound = new Audio("/static/audio/music/giorno.mp3");
         document.getElementById("spawn").addEventListener("click", function(){
             this.bgSound.play();
         }.bind(this));

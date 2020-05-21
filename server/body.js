@@ -5,6 +5,7 @@ class Body {
         var date = new Date();
         this.definitionTime = date.getTime();
         this.type = "";
+        this.world = null;
         this.owner = "universe";
         this.position = Vector2.zero();
         this.velocity = Vector2.zero();
