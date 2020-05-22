@@ -25,18 +25,25 @@ export class Canvas {
         this.app.stage.addChild(this.graphics);
 
         this.cache = {};
+        this.spriteIds = [];
     }
     resize() {
         this.app.renderer.resize(window.innerWidth, window.innerHeight);
     }
     update(state) {
-        /*var body;
-        this.graphics = new PIXI.Graphics();
-        for (var i = 0; i < state.length; i++) {
-            body = state[i];
-            this.graphics.beginFill(0xe74c3c);
-            this.graphics.drawCircle(body.x, body.y, 128);
-            this.graphics.endFill();
-        }*/
+        for (var key of Object.keys(state)) {
+            if (this.cache[key] === undefined) {
+                // add new sprites
+            } else {
+                // update existing sprites
+            }
+        }
+        for (var key of Object.keys(this.cache)) {
+            if (state[key] === undefined) {
+                // destroy nonexistant sprites
+            }
+        }
+
+        this.cache = state;
     }
 }
