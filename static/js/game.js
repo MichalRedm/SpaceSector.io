@@ -57,9 +57,10 @@ class Game {
         }.bind(this));
     }
     streamListener() {
-        this.socket.on("state", function(state) {
-            this.canvas.drawState(state);
-        });
+        this.socket.on("state", function(stateJSON) {
+            var state = JSON.parse(stateJSON);
+            this.canvas.update(state);
+        }.bind(this));
     }
     colorize() {
         const colors = ["#00faff", "#fc1800", "#ffe000", "#00ff00", "#ff009b", "#044aff", "#ff6020"];

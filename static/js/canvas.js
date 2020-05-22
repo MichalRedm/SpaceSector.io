@@ -20,13 +20,23 @@ export class Canvas {
 
         this.resize();
         window.addEventListener("resize", this.resize.bind(this));
+
+        this.graphics = new PIXI.Graphics();
+        this.app.stage.addChild(this.graphics);
+
+        this.cache = {};
     }
     resize() {
         this.app.renderer.resize(window.innerWidth, window.innerHeight);
     }
-    drawState(state) {
+    update(state) {
+        /*var body;
+        this.graphics = new PIXI.Graphics();
         for (var i = 0; i < state.length; i++) {
-            // do stuff
-        }
+            body = state[i];
+            this.graphics.beginFill(0xe74c3c);
+            this.graphics.drawCircle(body.x, body.y, 128);
+            this.graphics.endFill();
+        }*/
     }
 }

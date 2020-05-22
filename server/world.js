@@ -21,7 +21,8 @@ class World {
         this.mode = (worldData.mode !== undefined) ? worldData.mode : "default";
         this.size = (worldData.size !== undefined) ? worldData.size : this.settings.worldSize;
         this.players = [];
-        this.bodies = [];
+        this.bodies = {};
+        this.newBodyId = 0;
         this.chat = new Chat(this);
 
         console.log(`New world created with ID = ${this.id.bgYellow.black}\\n\\tName:\\t${this.name.gray}\\n\\tType:\\t${this.type == "public" ? ("public").cyan : this.type.red}\\n\\tMode:\\t${this.mode.gray}`);
@@ -54,7 +55,7 @@ class World {
                 planet = new Planet()
                 planet.position = position;
                 planetsArr.push(position);
-                this.bodies.push(planet);
+                this.bodies[i] = planet;
                 i++;
             }
             if (k >= this.settings.planetsCreateFailMultipier * this.settings.planetsCount) {
@@ -63,6 +64,7 @@ class World {
             }
             k++;
         }
+        this.newBodyId = i;
     }
     addPlayer(player) {
         this.players.push(player);
@@ -75,14 +77,19 @@ class World {
             this.players.splice(index, 1);
         }
     }
+    addBody(body) {
+        this.bodies[this.newBodyId] = body;
+        this.newBodyId++;
+    }
     getState(player) {
-        var state = [];
-        for (var i = 0; i < this.bodies.length; i++) {
-            if (this.bodies[i].position.distanceFrom(player.camera.position) <= player.camera.size) {
-                state.push(this.bodies[i]);
+        var state = {};
+        for (var key of Object.keys(this.bodies)) {
+            if (this.bodies[key].position.distanceFrom(player.camera.position) <= player.camera.size) {
+                state[key] = this.bodies[key];
             }
         }
-        return state;
+        var stateJSON = JSON.stringify(state);
+        return stateJSON;
     }
 }
 
