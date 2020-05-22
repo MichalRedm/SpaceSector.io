@@ -5,6 +5,7 @@ class Planet extends Body {
         super();
         this.type = "planet";
         this.mass = Infinity;
+        this.size = 128;
     }
 }
 

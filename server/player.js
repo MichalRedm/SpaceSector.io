@@ -1,3 +1,5 @@
+const Camera = require("./camera");
+
 class Player {
     constructor(id, world) {
         this.id = id;
@@ -7,6 +9,7 @@ class Player {
         this.score = 0;
         this.chatRequest = true;
         this.admin = false;
+        this.camera = new Camera();
     }
 }
 

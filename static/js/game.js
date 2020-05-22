@@ -7,6 +7,7 @@ import { GameConsole } from "./console.js";
 import { Changelog } from "./changelog.js";
 import { Controls } from "./controls.js";
 import { Sound } from "./sound.js";
+import { Protector } from "./protector.js";
 
 class Game {
     constructor() {
@@ -18,6 +19,7 @@ class Game {
         this.modal = new Modal();
         this.console = new GameConsole(this.socket);
         this.changelog = new Changelog();
+        this.protector = new Protector();
 
         this.reloading = false;
 
@@ -46,17 +48,17 @@ class Game {
         }.bind(this);
     }
     disconnectListener() {
-        var disconnected = false;
+        this.disconnected = false;
         this.socket.on('disconnect', function() {
             if (!this.reloading) {
                 this.modal.open("Connection lost", "lol you've been disconnected from the server");
-                disconnected = true;
+                this.disconnected = true;
             }
         }.bind(this));
     }
     streamListener() {
-        this.socket.on("stream", function(data) {
-            //console.log(data);
+        this.socket.on("state", function(state) {
+            this.canvas.drawState(state);
         });
     }
     colorize() {

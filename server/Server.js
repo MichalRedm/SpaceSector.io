@@ -69,7 +69,9 @@ class Server {
         });
 
         setInterval(function() { this.chatStream(player); }.bind(this), this.settings.chatStepTime);
-        setInterval(this.stream.bind(this), this.settings.stepTime);
+        setInterval(() => {
+            if (player !== null) { this.io.sockets.emit("state", player.world.getState(player)); };
+        }, this.settings.stepTime);
 
         socket.on("chatMessage", function(message) {
             player.world.chat.addMessage(message, player.id, player.name);
@@ -96,9 +98,6 @@ class Server {
             console.log("Player ".yellow + player.id.black.bgYellow + " has disconnected".yellow);
             player = null;
         });
-    }
-    stream() {
-        this.io.sockets.emit("stream", "state");
     }
     chatStream(player) {
         if (player !== null) {

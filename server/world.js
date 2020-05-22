@@ -75,6 +75,15 @@ class World {
             this.players.splice(index, 1);
         }
     }
+    getState(player) {
+        var state = [];
+        for (var i = 0; i < this.bodies.length; i++) {
+            if (this.bodies[i].position.distanceFrom(player.camera.position) <= player.camera.size) {
+                state.push(this.bodies[i]);
+            }
+        }
+        return state;
+    }
 }
 
 module.exports = World;

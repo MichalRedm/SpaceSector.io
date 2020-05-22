@@ -3,6 +3,7 @@
 
 @import "variables.css";
 @import "global.css";
+@import "cursor.css";
 @import "canvas.css";
 @import "boxes.css";
 @import "lists.css";

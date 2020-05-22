@@ -1,7 +1,7 @@
 export class Canvas {
     constructor() {
         let type = "WebGL"
-        if(!PIXI.utils.isWebGLSupported()){
+        if (!PIXI.utils.isWebGLSupported()) {
             type = "canvas"
         }
 
@@ -23,5 +23,10 @@ export class Canvas {
     }
     resize() {
         this.app.renderer.resize(window.innerWidth, window.innerHeight);
+    }
+    drawState(state) {
+        for (var i = 0; i < state.length; i++) {
+            // do stuff
+        }
     }
 }
