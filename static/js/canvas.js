@@ -48,6 +48,7 @@ export class Canvas {
                     // add new sprites
                     this.map[key] = this.drawBody(state[key]);
                 } else {
+                    this.updateBody(state[key], key);
                     // update existing sprites
                 }
             }
@@ -79,5 +80,8 @@ export class Canvas {
         bodyDrawing.position.set(body.position.x + window.innerWidth / 2, body.position.y + window.innerHeight / 2);
         this.app.stage.addChild(bodyDrawing);
         return bodyDrawing;
+    }
+    updateBody(body, id) {
+        
     }
 }
